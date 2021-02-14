@@ -1,0 +1,1 @@
+clang CMakeFiles/opengl_city.dir/main.cpp.o -o opengl_city  /usr/lib/libOpenGL.so /usr/lib/libglut.so /usr/lib/libXmu.so /usr/lib/libXi.so 
