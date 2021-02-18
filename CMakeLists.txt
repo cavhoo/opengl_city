@@ -1,20 +1,18 @@
 cmake_minimum_required(VERSION 3.13)
-project(opengl_city VERSION 1.0
-	DESCRIPTION "City generated in OpenGL"
-	LANGUAGES CXX
-	)
+project(opengl_city VERSION 0.1.0)
 
-set(CMAKE_CXX_COMPILER "clang")
-set(CMAKE_CXX_STANDARD 14)
+include(CTest)
+enable_testing()
 
-set(SOURCE_FILES main.cpp)
-add_executable(opengl_city ${SOURCE_FILES})
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
+add_executable(opengl_city ${SOURCES})
 
-find_package(OpenGL REQUIRED COMPONENTS OpenGL)
+find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
+include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS})
+target_link_libraries(opengl_city ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})
 
-add_dependencies(opengl_city OpenGL::OpenGL)
-include_directories(${GLUT_INCLUDE_DIRS})
-target_link_libraries(opengl_city OpenGL::OpenGL ${GLUT_LIBRARY})
-
-#include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS})
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)

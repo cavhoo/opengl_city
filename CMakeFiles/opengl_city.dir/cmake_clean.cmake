@@ -1,7 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/opengl_city.dir/main.cpp.o"
-  "opengl_city"
-  "opengl_city.pdb"
+  "CMakeFiles/opengl_city.dir/src/boxBuilding.cpp.o"
+  "CMakeFiles/opengl_city.dir/src/building.cpp.o"
+  "CMakeFiles/opengl_city.dir/src/container.cpp.o"
+  "CMakeFiles/opengl_city.dir/src/main.cpp.o"
+  "CMakeFiles/opengl_city.dir/src/scene.cpp.o"
+  "CMakeFiles/opengl_city.dir/src/uuid.cpp.o"
+  "bin/opengl_city"
+  "bin/opengl_city.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
