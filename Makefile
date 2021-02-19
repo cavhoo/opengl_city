@@ -647,6 +647,33 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/randomGenerator.o: src/randomGenerator.cpp.o
+
+.PHONY : src/randomGenerator.o
+
+# target to build an object file
+src/randomGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/randomGenerator.cpp.o
+.PHONY : src/randomGenerator.cpp.o
+
+src/randomGenerator.i: src/randomGenerator.cpp.i
+
+.PHONY : src/randomGenerator.i
+
+# target to preprocess a source file
+src/randomGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/randomGenerator.cpp.i
+.PHONY : src/randomGenerator.cpp.i
+
+src/randomGenerator.s: src/randomGenerator.cpp.s
+
+.PHONY : src/randomGenerator.s
+
+# target to generate assembly for a file
+src/randomGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/randomGenerator.cpp.s
+.PHONY : src/randomGenerator.cpp.s
+
 src/scene.o: src/scene.cpp.o
 
 .PHONY : src/scene.o
@@ -673,6 +700,33 @@ src/scene.s: src/scene.cpp.s
 src/scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/scene.cpp.s
 .PHONY : src/scene.cpp.s
+
+src/skyscraper.o: src/skyscraper.cpp.o
+
+.PHONY : src/skyscraper.o
+
+# target to build an object file
+src/skyscraper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/skyscraper.cpp.o
+.PHONY : src/skyscraper.cpp.o
+
+src/skyscraper.i: src/skyscraper.cpp.i
+
+.PHONY : src/skyscraper.i
+
+# target to preprocess a source file
+src/skyscraper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/skyscraper.cpp.i
+.PHONY : src/skyscraper.cpp.i
+
+src/skyscraper.s: src/skyscraper.cpp.s
+
+.PHONY : src/skyscraper.s
+
+# target to generate assembly for a file
+src/skyscraper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/skyscraper.cpp.s
+.PHONY : src/skyscraper.cpp.s
 
 src/uuid.o: src/uuid.cpp.o
 
@@ -753,9 +807,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/randomGenerator.o"
+	@echo "... src/randomGenerator.i"
+	@echo "... src/randomGenerator.s"
 	@echo "... src/scene.o"
 	@echo "... src/scene.i"
 	@echo "... src/scene.s"
+	@echo "... src/skyscraper.o"
+	@echo "... src/skyscraper.i"
+	@echo "... src/skyscraper.s"
 	@echo "... src/uuid.o"
 	@echo "... src/uuid.i"
 	@echo "... src/uuid.s"

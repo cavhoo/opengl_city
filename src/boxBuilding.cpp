@@ -16,7 +16,6 @@ BoxBuilding::BoxBuilding(Vec3f position, float width, float height, float depth)
 
 void BoxBuilding::init()
 {
-	printf("Init BoxBuilding\n");
 	float x = this->getPosition().x;
 	float y = this->getPosition().y;
 	float z = this->getPosition().z;
@@ -26,15 +25,15 @@ void BoxBuilding::init()
 	float height = this->height;
 
 
-	this->verts.push_back({ x, y, z}); // Bottom Left
-	this->verts.push_back({ x + width, y, z});
-	this->verts.push_back({ x + width, y, z + depth});
-	this->verts.push_back({ x, y, z + depth});
+	this->verts.push_back({ x, y, z}); // A
+	this->verts.push_back({ x + width, y, z}); // B
+	this->verts.push_back({ x + width, y, z + depth}); // C
+	this->verts.push_back({ x, y, z + depth}); // D
 
-	this->verts.push_back({ x, y + height, z}); // Bottom Left
-	this->verts.push_back({ x + width, y + height, z});
-	this->verts.push_back({ x + width, y + height, z + depth});
-	this->verts.push_back({ x, y + height, z + depth});
+	this->verts.push_back({ x, y + height, z}); // E
+	this->verts.push_back({ x + width, y + height, z}); // F
+	this->verts.push_back({ x + width, y + height, z + depth}); // G
+	this->verts.push_back({ x, y + height, z + depth}); // H
 
 	// Let's make some triangles
 	//Front A B C
@@ -109,7 +108,6 @@ void BoxBuilding::init()
 		this->verts[2],
 		this->verts[3]
 	});
-
 }
 
 Vec3f BoxBuilding::getPosition()
@@ -119,7 +117,6 @@ Vec3f BoxBuilding::getPosition()
 
 void BoxBuilding::render()
 {
-	Building::render();
 	glBegin(GL_TRIANGLES);
 	for ( unsigned i = 0; i < this->triangles.size(); i++ )
 	{
@@ -129,6 +126,7 @@ void BoxBuilding::render()
 		glVertex3f(tri.c.x, tri.c.y, tri.c.z);
 	}
 	glEnd();
+	Building::render();
 }
 
 BoxBuilding::~BoxBuilding()

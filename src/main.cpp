@@ -5,10 +5,11 @@
 
 #include "boxBuilding.hpp"
 #include "scene.hpp"
+#include "skyscraper.hpp"
 #include "vectors.hpp"
 
 float drawingInterval = 0.0;
-int rotation = 0;
+float rotation = 0.0;
 Scene* rootScene;
 // Method Stubs
 void initRendering(void);
@@ -16,6 +17,7 @@ void onResize(int,int);
 void setFPS(int);
 void scheduleRedraw(int);
 void render(void);
+void idle(void);
 void setupRootScene(void);
 
 int main(int argc, char **argv) {
@@ -28,6 +30,7 @@ int main(int argc, char **argv) {
   setupRootScene();
   glutDisplayFunc(render);
   glutReshapeFunc(onResize);
+  glutIdleFunc(idle);
   setFPS(30);
   glutMainLoop();
   return 0;
@@ -36,10 +39,12 @@ int main(int argc, char **argv) {
 void setupRootScene()
 {
   rootScene = new Scene("root");
-  Vec3f pos = { 50, 0, 50};
-  BoxBuilding *box = new BoxBuilding(pos, 100, 300, 100);
-
+  Vec3f pos = { 0, 0, 0};
+  BoxBuilding *box = new BoxBuilding(pos, 100, 200, 100);
+  Vec3f pos1 = { 200, 0, 200};
+  Skyscraper *scaper = new Skyscraper(pos1, 200, 500, 300, 3);
   rootScene->addChild(box);
+  rootScene->addChild(scaper);
 }
 
 
@@ -68,23 +73,29 @@ void scheduleRedraw(int v)
   glutTimerFunc((int)drawingInterval, scheduleRedraw, v);
 }
 
+void idle()
+{
+  glutPostRedisplay();
+}
+
 void render()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
-  gluLookAt(0, 600, 2500, 0, 0, 0, 0, 1, 0);
-  glRotatef((GLfloat)++rotation, 0, 1, 0);
-  glColor3f(1.0, 1.0, 1.0);
+  gluLookAt(0, 600, 2000, 0, 0, 0, 0, 1, 0);
+  rotation += 0.5;
+  glRotatef(rotation, 0, 1, 0);
+  glColor3f(1.0, 0.0, 1.0);
   glBegin(GL_LINES);
   for (GLfloat i = -1000.0; i <= 1000.0; i += 10)
   {
     glVertex3f(i, 0, 1000); glVertex3f(i, 0, -1000);
     glVertex3f(1000, 0, i); glVertex3f(-1000, 0, i);
   }
-
+  glEnd();
   // Render Root Scene
+  glColor3f(1.0, 1.0, 1.0);
   rootScene->render();
-  glFlush();
   glutSwapBuffers();
 }

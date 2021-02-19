@@ -5,14 +5,16 @@
 #include "vectors.hpp"
 #include <string>
 #include <vector>
+#include "renderable.hpp"
+
 using namespace std;
 
-class Container {
+class Container: public Renderable {
 private:
   string uuid = "";
   string name = "";
   Vec3f position = {0, 0, 0};
-  vector<Container*> children;
+  vector<Renderable*> children;
 public:
   Container();
   Container(string name);

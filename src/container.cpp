@@ -59,7 +59,6 @@ bool Container::operator==(const Container &rhs) {
 }
 
 void Container::render() {
-  printf("Rendering %lu children\n ", this->children.size());
   for (unsigned i = 0; i < this->children.size(); i++) {
     this->children[i]->render();
   }
