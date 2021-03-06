@@ -1,4 +1,5 @@
 #include "container.hpp"
+#include "vectors.hpp"
 #include <GL/gl.h>
 #include <cstdio>
 
@@ -21,6 +22,20 @@ bool Container::setPosition(Vec3f position) {
   this->position.z = position.z;
 
   return true;
+}
+
+Vec3f Container::getAnchor()
+{
+  return this->anchor;
+}
+
+bool Container::setAnchor(Vec3f anchor)
+{
+  if (anchor.x > 0 &&  anchor.y > 0 && anchor.z > 0) {
+    this->anchor = anchor;
+    return true;
+  }
+  return false;
 }
 
 bool Container::addChild(Container *child) {
@@ -61,9 +76,9 @@ bool Container::operator==(const Container &rhs) {
 void Container::render(Vec3f parentPosition) {
   for (unsigned i = 0; i < this->children.size(); i++) {
     this->children[i]->render({
-      parentPosition.x + this->getPosition().x,
-      parentPosition.y + this->getPosition().y,
-      parentPosition.z + this->getPosition().z
+      parentPosition.x + (this->getPosition().x - ( this->getPosition().x * this->anchor.x )),
+      parentPosition.y + (this->getPosition().y - ( this->getPosition().y * this->anchor.y )),
+      parentPosition.z + (this->getPosition().z - ( this->getPosition().z * this->anchor.z ))
     });
   }
 }

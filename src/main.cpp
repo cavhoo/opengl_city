@@ -3,7 +3,7 @@
 #include <GL/glu.h>
 #include <stdio.h>
 
-#include "CityBlock.hpp"
+#include "cityBlock.hpp"
 #include "boxBuilding.hpp"
 #include "scene.hpp"
 #include "skyscraper.hpp"
@@ -46,8 +46,10 @@ void setupRootScene()
   Skyscraper *scaper = new Skyscraper(pos1, 200, 500, 300, 3);
 
   CityBlock *block = new CityBlock(600, 600);
-  block->setPosition({-300, 0, -300});
+  block->setPosition({0, 0, 0});
   block->create();
+  rootScene->setPosition({0, 0, 0});
+  //rootScene->setAnchor({0.5, 0.0, 0.5});
   rootScene->addChild(block);
 }
 
@@ -87,9 +89,15 @@ void render()
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
+
+  // Look at center of grid with a distance of 2000 units
   gluLookAt(0, 600, 2000, 0, 0, 0, 0, 1, 0);
+
+  // Rotate grid constantly
   rotation += 0.5;
-  glRotatef(rotation, 0, 1, 0);
+  //glRotatef(rotation, 0, 1, 0);
+
+  // Render base grid
   glColor3f(1.0, 0.0, 1.0);
   glBegin(GL_LINES);
   for (GLfloat i = -1000.0; i <= 1000.0; i += 10)

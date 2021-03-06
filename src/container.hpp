@@ -11,24 +11,27 @@ using namespace std;
 
 class Container: public Renderable {
 private:
-  string uuid = "";
-  string name = "";
-  Vec3f position = {0, 0, 0};
-  vector<Renderable*> children;
+    string uuid = "";
+    string name = "";
+    Vec3f position = {0, 0, 0};
+    Vec3f anchor = {0, 0, 0};
+    vector<Renderable*> children;
 public:
-  Container();
-  Container(string name);
-  ~Container();
-  Vec3f getPosition();
-  bool setPosition(Vec3f);
-  bool addChild(Container *cnt);
-  bool removeChild(Container *cnt);
-  bool removeChildAt(int);
-  Container getChildAt(int);
-  int compare(Container);
-  string getUUID();
-  bool operator==(const Container &rhs);
-  void render(Vec3f parentPositon);
+    Container();
+    Container(string name);
+    ~Container();
+    Vec3f getPosition();
+    bool setPosition(Vec3f);
+    Vec3f getAnchor();
+    bool setAnchor(Vec3f);
+    bool addChild(Container *cnt);
+    bool removeChild(Container *cnt);
+    bool removeChildAt(int);
+    Container getChildAt(int);
+    int compare(Container);
+    string getUUID();
+    bool operator==(const Container &rhs);
+    void render(Vec3f parentPositon);
 };
 
 #endif // __CONTAINER_H_

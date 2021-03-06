@@ -593,6 +593,33 @@ src/building.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/building.cpp.s
 .PHONY : src/building.cpp.s
 
+src/cityBlock.o: src/cityBlock.cpp.o
+
+.PHONY : src/cityBlock.o
+
+# target to build an object file
+src/cityBlock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/cityBlock.cpp.o
+.PHONY : src/cityBlock.cpp.o
+
+src/cityBlock.i: src/cityBlock.cpp.i
+
+.PHONY : src/cityBlock.i
+
+# target to preprocess a source file
+src/cityBlock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/cityBlock.cpp.i
+.PHONY : src/cityBlock.cpp.i
+
+src/cityBlock.s: src/cityBlock.cpp.s
+
+.PHONY : src/cityBlock.s
+
+# target to generate assembly for a file
+src/cityBlock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/cityBlock.cpp.s
+.PHONY : src/cityBlock.cpp.s
+
 src/container.o: src/container.cpp.o
 
 .PHONY : src/container.o
@@ -674,6 +701,33 @@ src/randomGenerator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/randomGenerator.cpp.s
 .PHONY : src/randomGenerator.cpp.s
 
+src/road.o: src/road.cpp.o
+
+.PHONY : src/road.o
+
+# target to build an object file
+src/road.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/road.cpp.o
+.PHONY : src/road.cpp.o
+
+src/road.i: src/road.cpp.i
+
+.PHONY : src/road.i
+
+# target to preprocess a source file
+src/road.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/road.cpp.i
+.PHONY : src/road.cpp.i
+
+src/road.s: src/road.cpp.s
+
+.PHONY : src/road.s
+
+# target to generate assembly for a file
+src/road.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/road.cpp.s
+.PHONY : src/road.cpp.s
+
 src/scene.o: src/scene.cpp.o
 
 .PHONY : src/scene.o
@@ -727,6 +781,33 @@ src/skyscraper.s: src/skyscraper.cpp.s
 src/skyscraper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/skyscraper.cpp.s
 .PHONY : src/skyscraper.cpp.s
+
+src/utils.o: src/utils.cpp.o
+
+.PHONY : src/utils.o
+
+# target to build an object file
+src/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/utils.cpp.o
+.PHONY : src/utils.cpp.o
+
+src/utils.i: src/utils.cpp.i
+
+.PHONY : src/utils.i
+
+# target to preprocess a source file
+src/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/utils.cpp.i
+.PHONY : src/utils.cpp.i
+
+src/utils.s: src/utils.cpp.s
+
+.PHONY : src/utils.s
+
+# target to generate assembly for a file
+src/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/utils.cpp.s
+.PHONY : src/utils.cpp.s
 
 src/uuid.o: src/uuid.cpp.o
 
@@ -801,6 +882,9 @@ help:
 	@echo "... src/building.o"
 	@echo "... src/building.i"
 	@echo "... src/building.s"
+	@echo "... src/cityBlock.o"
+	@echo "... src/cityBlock.i"
+	@echo "... src/cityBlock.s"
 	@echo "... src/container.o"
 	@echo "... src/container.i"
 	@echo "... src/container.s"
@@ -810,12 +894,18 @@ help:
 	@echo "... src/randomGenerator.o"
 	@echo "... src/randomGenerator.i"
 	@echo "... src/randomGenerator.s"
+	@echo "... src/road.o"
+	@echo "... src/road.i"
+	@echo "... src/road.s"
 	@echo "... src/scene.o"
 	@echo "... src/scene.i"
 	@echo "... src/scene.s"
 	@echo "... src/skyscraper.o"
 	@echo "... src/skyscraper.i"
 	@echo "... src/skyscraper.s"
+	@echo "... src/utils.o"
+	@echo "... src/utils.i"
+	@echo "... src/utils.s"
 	@echo "... src/uuid.o"
 	@echo "... src/uuid.i"
 	@echo "... src/uuid.s"
