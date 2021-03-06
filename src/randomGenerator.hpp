@@ -1,6 +1,7 @@
 #ifndef __RANDOMGENERATOR_H_
 #define __RANDOMGENERATOR_H_
 
+#include "structs.hpp"
 #include <random>
 class RandomGenerator {
 	private:
@@ -10,5 +11,7 @@ class RandomGenerator {
 	public:
 		static RandomGenerator* getInstance();
 		int getIntFromRange(int min, int max);
+		float getFloatFromRange(float min, float max);
+		Color3f getRandomColor(void);
 };
 #endif // __RANDOMGENERATOR_H_

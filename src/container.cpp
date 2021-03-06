@@ -58,8 +58,12 @@ bool Container::operator==(const Container &rhs) {
   return this->uuid == rhs.uuid;
 }
 
-void Container::render() {
+void Container::render(Vec3f parentPosition) {
   for (unsigned i = 0; i < this->children.size(); i++) {
-    this->children[i]->render();
+    this->children[i]->render({
+      parentPosition.x + this->getPosition().x,
+      parentPosition.y + this->getPosition().y,
+      parentPosition.z + this->getPosition().z
+    });
   }
 }

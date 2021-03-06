@@ -28,7 +28,7 @@ public:
   int compare(Container);
   string getUUID();
   bool operator==(const Container &rhs);
-  void render();
+  void render(Vec3f parentPositon);
 };
 
 #endif // __CONTAINER_H_

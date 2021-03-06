@@ -14,6 +14,6 @@ class BoxBuilding : public Building
 		~BoxBuilding();
 		void setStories(int);
 		Vec3f getPosition();
-		void render(void);
+		void render(Vec3f parentPosition);
 };
 #endif // __BOXBUILDING_H_

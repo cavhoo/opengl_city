@@ -2,6 +2,7 @@
 #define __SKYSCRAPER_H_
 
 #include "building.hpp"
+#include "structs.hpp"
 #include "vectors.hpp"
 #include "boxBuilding.hpp"
 #include "randomGenerator.hpp"
@@ -15,6 +16,7 @@ class Skyscraper: public Building {
 		float depth;
 		int roofs;
 		void init(void);
+		Color3f color;
 	public:
 		Skyscraper(Vec3f pos, float width, float height, float depth, int roofs);
 };

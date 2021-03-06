@@ -3,6 +3,7 @@
 #include <GL/glu.h>
 #include <stdio.h>
 
+#include "CityBlock.hpp"
 #include "boxBuilding.hpp"
 #include "scene.hpp"
 #include "skyscraper.hpp"
@@ -43,8 +44,11 @@ void setupRootScene()
   BoxBuilding *box = new BoxBuilding(pos, 100, 200, 100);
   Vec3f pos1 = { 200, 0, 200};
   Skyscraper *scaper = new Skyscraper(pos1, 200, 500, 300, 3);
-  rootScene->addChild(box);
-  rootScene->addChild(scaper);
+
+  CityBlock *block = new CityBlock(600, 600);
+  block->setPosition({-300, 0, -300});
+  block->create();
+  rootScene->addChild(block);
 }
 
 
@@ -96,6 +100,6 @@ void render()
   glEnd();
   // Render Root Scene
   glColor3f(1.0, 1.0, 1.0);
-  rootScene->render();
+  rootScene->render({0.0, 0.0, 0.0});
   glutSwapBuffers();
 }

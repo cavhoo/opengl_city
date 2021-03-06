@@ -7,7 +7,6 @@
 
 BoxBuilding::BoxBuilding(Vec3f position, float width, float height, float depth): Building(position)
 {
-	printf("Box Building Constructor\n");
 	this->width = width;
 	this->depth = depth;
 	this->height = height;
@@ -115,18 +114,19 @@ Vec3f BoxBuilding::getPosition()
 	return Building::getPosition();
 }
 
-void BoxBuilding::render()
+void BoxBuilding::render(Vec3f parentPosition)
 {
 	glBegin(GL_TRIANGLES);
+	glColor3f(this->color.r, this->color.g, this->color.b);
 	for ( unsigned i = 0; i < this->triangles.size(); i++ )
 	{
 		Triangle tri = this->triangles[i];
-		glVertex3f(tri.a.x, tri.a.y, tri.a.z);
-		glVertex3f(tri.b.x, tri.b.y, tri.b.z);
-		glVertex3f(tri.c.x, tri.c.y, tri.c.z);
+		glVertex3f(tri.a.x + parentPosition.x, tri.a.y + parentPosition.y, tri.a.z + parentPosition.z);
+		glVertex3f(tri.b.x + parentPosition.x, tri.b.y + parentPosition.y, tri.b.z + parentPosition.z);
+		glVertex3f(tri.c.x + parentPosition.x, tri.c.y + parentPosition.y, tri.c.z + parentPosition.z);
 	}
 	glEnd();
-	Building::render();
+	Building::render(this->getPosition());
 }
 
 BoxBuilding::~BoxBuilding()
