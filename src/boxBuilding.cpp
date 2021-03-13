@@ -1,11 +1,6 @@
 #include "boxBuilding.hpp"
-#include "building.hpp"
-#include "structs.hpp"
-#include "vectors.hpp"
-#include <GL/gl.h>
-#include <stdio.h>
 
-BoxBuilding::BoxBuilding(Vec3f position, float width, float height, float depth): Building(position)
+BoxBuilding::BoxBuilding(Vector3f position, float width, float height, float depth): Building(position)
 {
 	this->width = width;
 	this->depth = depth;
@@ -109,12 +104,12 @@ void BoxBuilding::init()
 	});
 }
 
-Vec3f BoxBuilding::getPosition()
+Vector3f BoxBuilding::getPosition()
 {
 	return Building::getPosition();
 }
 
-void BoxBuilding::render(Vec3f parentPosition)
+void BoxBuilding::render(Vector3f parentPosition)
 {
 	glBegin(GL_TRIANGLES);
 	glColor3f(this->color.r, this->color.g, this->color.b);

@@ -18,6 +18,6 @@ class Skyscraper: public Building {
 		void init(void);
 		Color3f color;
 	public:
-		Skyscraper(Vec3f pos, float width, float height, float depth, int roofs);
+		Skyscraper(Vector3f pos, float width, float height, float depth, int roofs);
 };
 #endif // __SKYSCRAPER_H_

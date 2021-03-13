@@ -8,12 +8,12 @@ Building::Building(): Container()
 	this->color = { 1.0, 1.0, 1.0 };
 }
 
-Building::Building(Vec3 position): Container()
+Building::Building(Vector3 position): Container()
 {
 	this->setPosition({ (float)position.x, (float) position.y, (float)position.z});
 }
 
-Building::Building(Vec3f position): Container()
+Building::Building(Vector3f position): Container()
 {
 	this->setPosition(position);
 }
@@ -24,7 +24,7 @@ Building::~Building()
 	this->verts.shrink_to_fit();
 }
 
-void Building::render(Vec3f parentPosition)
+void Building::render(Vector3f parentPosition)
 {
 	glColor3f(this->color.r,this->color.g, this->color.b);
 	Container::render(parentPosition);

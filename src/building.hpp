@@ -4,21 +4,22 @@
 #include <vector>
 #include "container.hpp"
 #include "structs.hpp"
-#include "vectors.hpp"
+#include "vector3.hpp"
+#include "vector3f.hpp"
 
 class Building: public Container
 {
 	protected:
 		Color3f color;
-		std::vector<Vec3f> verts;
+		std::vector<Vector3f> verts;
 		std::vector<Triangle> triangles;
 	public:
 		Building(void);
-		Building(Vec3);
-		Building(Vec3f);
+		Building(Vector3);
+		Building(Vector3f);
 		~Building();
 		void setColor(Color3f color);
-		void render(Vec3f parentPosition);
+		void render(Vector3f parentPosition);
 };
 
 #endif // __BUILDING_H_

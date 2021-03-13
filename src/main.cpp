@@ -40,16 +40,12 @@ int main(int argc, char **argv) {
 void setupRootScene()
 {
   rootScene = new Scene("root");
-  Vec3f pos = { 0, 0, 0};
-  BoxBuilding *box = new BoxBuilding(pos, 100, 200, 100);
-  Vec3f pos1 = { 200, 0, 200};
-  Skyscraper *scaper = new Skyscraper(pos1, 200, 500, 300, 3);
 
   CityBlock *block = new CityBlock(600, 600);
   block->setPosition({0, 0, 0});
   block->create();
+  block->setAnchor({0.5, 0.0, 0.5});
   rootScene->setPosition({0, 0, 0});
-  //rootScene->setAnchor({0.5, 0.0, 0.5});
   rootScene->addChild(block);
 }
 
@@ -95,7 +91,7 @@ void render()
 
   // Rotate grid constantly
   rotation += 0.5;
-  //glRotatef(rotation, 0, 1, 0);
+  glRotatef(rotation, 0, 1, 0);
 
   // Render base grid
   glColor3f(1.0, 0.0, 1.0);

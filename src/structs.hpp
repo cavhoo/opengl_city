@@ -1,16 +1,16 @@
 #ifndef __STRUCTS_H_
 #define __STRUCTS_H_
 
-#include "vectors.hpp"
+#include "vector3f.hpp"
 
 typedef struct Triangle {
-	Vec3f a;
-	Vec3f b;
-	Vec3f c;
+	Vector3f a;
+	Vector3f b;
+	Vector3f c;
 } Triangle;
 
 typedef struct Area {
-	Vec3f pos;
+	Vector3f pos;
 	float width;
 	float depth;
 } Area;

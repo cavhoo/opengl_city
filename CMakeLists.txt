@@ -6,6 +6,7 @@ enable_testing()
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
+
 add_executable(opengl_city ${SOURCES})
 
 find_package(OpenGL REQUIRED)

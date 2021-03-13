@@ -1,24 +1,20 @@
-#ifndef __ROAD_H_
-#define __ROAD_H_
+#ifndef __PLANE_H_
+#define __PLANE_H_
 
-#include "container.hpp"
+#include "renderable.hpp"
 #include "structs.hpp"
 #include "vectors.hpp"
 #include <vector>
-class Road: public Container {
+class Plane: public Renderable {
 	private:
 		int width = 0;
 		int height = 0;
-		int depth = 0;
-		Color3f color;
 		std::vector<Vector3f> verts;
 		std::vector<Triangle> triangles;
 		void init(void);
 	public:
-		Road();
-		Road(int, int, int);
-		~Road();
-		void render();
+		void setSize(int, int);
+		void render(Vector3f parentPos);
 };
 
-#endif // __ROAD_H_
+#endif // __PLANE_H_

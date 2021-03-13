@@ -1,7 +1,12 @@
 #ifndef __BOXBUILDING_H_
 #define __BOXBUILDING_H_
 
+#include <GL/gl.h>
+#include <stdio.h>
 #include "building.hpp"
+#include "structs.hpp"
+#include "vector3f.hpp"
+
 class BoxBuilding : public Building
 {
 	private:
@@ -10,10 +15,10 @@ class BoxBuilding : public Building
 		float depth;
 		void init();
 	public:
-		BoxBuilding(Vec3f position, float width, float height, float depth);
+		BoxBuilding(Vector3f position, float width, float height, float depth);
 		~BoxBuilding();
 		void setStories(int);
-		Vec3f getPosition();
-		void render(Vec3f parentPosition);
+		Vector3f getPosition();
+		void render(Vector3f parentPosition);
 };
 #endif // __BOXBUILDING_H_

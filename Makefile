@@ -674,6 +674,33 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/plane.o: src/plane.cpp.o
+
+.PHONY : src/plane.o
+
+# target to build an object file
+src/plane.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/plane.cpp.o
+.PHONY : src/plane.cpp.o
+
+src/plane.i: src/plane.cpp.i
+
+.PHONY : src/plane.i
+
+# target to preprocess a source file
+src/plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/plane.cpp.i
+.PHONY : src/plane.cpp.i
+
+src/plane.s: src/plane.cpp.s
+
+.PHONY : src/plane.s
+
+# target to generate assembly for a file
+src/plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/plane.cpp.s
+.PHONY : src/plane.cpp.s
+
 src/randomGenerator.o: src/randomGenerator.cpp.o
 
 .PHONY : src/randomGenerator.o
@@ -836,6 +863,60 @@ src/uuid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/uuid.cpp.s
 .PHONY : src/uuid.cpp.s
 
+src/vector3.o: src/vector3.cpp.o
+
+.PHONY : src/vector3.o
+
+# target to build an object file
+src/vector3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/vector3.cpp.o
+.PHONY : src/vector3.cpp.o
+
+src/vector3.i: src/vector3.cpp.i
+
+.PHONY : src/vector3.i
+
+# target to preprocess a source file
+src/vector3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/vector3.cpp.i
+.PHONY : src/vector3.cpp.i
+
+src/vector3.s: src/vector3.cpp.s
+
+.PHONY : src/vector3.s
+
+# target to generate assembly for a file
+src/vector3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/vector3.cpp.s
+.PHONY : src/vector3.cpp.s
+
+src/vector3f.o: src/vector3f.cpp.o
+
+.PHONY : src/vector3f.o
+
+# target to build an object file
+src/vector3f.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/vector3f.cpp.o
+.PHONY : src/vector3f.cpp.o
+
+src/vector3f.i: src/vector3f.cpp.i
+
+.PHONY : src/vector3f.i
+
+# target to preprocess a source file
+src/vector3f.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/vector3f.cpp.i
+.PHONY : src/vector3f.cpp.i
+
+src/vector3f.s: src/vector3f.cpp.s
+
+.PHONY : src/vector3f.s
+
+# target to generate assembly for a file
+src/vector3f.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_city.dir/build.make CMakeFiles/opengl_city.dir/src/vector3f.cpp.s
+.PHONY : src/vector3f.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -891,6 +972,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/plane.o"
+	@echo "... src/plane.i"
+	@echo "... src/plane.s"
 	@echo "... src/randomGenerator.o"
 	@echo "... src/randomGenerator.i"
 	@echo "... src/randomGenerator.s"
@@ -909,6 +993,12 @@ help:
 	@echo "... src/uuid.o"
 	@echo "... src/uuid.i"
 	@echo "... src/uuid.s"
+	@echo "... src/vector3.o"
+	@echo "... src/vector3.i"
+	@echo "... src/vector3.s"
+	@echo "... src/vector3f.o"
+	@echo "... src/vector3f.i"
+	@echo "... src/vector3f.s"
 .PHONY : help
 
 

@@ -1,7 +1,5 @@
 #include "container.hpp"
 #include "vectors.hpp"
-#include <GL/gl.h>
-#include <cstdio>
 
 Container::Container() {
   this->position.x = 0;
@@ -14,9 +12,9 @@ Container::Container(string name) : Container() { this->name = name; }
 
 Container::~Container() {}
 
-Vec3f Container::getPosition() { return this->position; }
+Vector3f Container::getPosition() { return this->position; }
 
-bool Container::setPosition(Vec3f position) {
+bool Container::setPosition(Vector3f position) {
   this->position.x = position.x;
   this->position.y = position.y;
   this->position.z = position.z;
@@ -24,14 +22,14 @@ bool Container::setPosition(Vec3f position) {
   return true;
 }
 
-Vec3f Container::getAnchor()
+Vector3f Container::getAnchor()
 {
   return this->anchor;
 }
 
-bool Container::setAnchor(Vec3f anchor)
+bool Container::setAnchor(Vector3f anchor)
 {
-  if (anchor.x > 0 &&  anchor.y > 0 && anchor.z > 0) {
+  if (anchor.x >= 0 &&  anchor.y >= 0 && anchor.z >= 0) {
     this->anchor = anchor;
     return true;
   }
@@ -73,12 +71,12 @@ bool Container::operator==(const Container &rhs) {
   return this->uuid == rhs.uuid;
 }
 
-void Container::render(Vec3f parentPosition) {
+void Container::render(Vector3f parentPosition) {
   for (unsigned i = 0; i < this->children.size(); i++) {
     this->children[i]->render({
-      parentPosition.x + (this->getPosition().x - ( this->getPosition().x * this->anchor.x )),
-      parentPosition.y + (this->getPosition().y - ( this->getPosition().y * this->anchor.y )),
-      parentPosition.z + (this->getPosition().z - ( this->getPosition().z * this->anchor.z ))
+      parentPosition.x + this->getPosition().x,
+      parentPosition.y + this->getPosition().y,
+      parentPosition.z + this->getPosition().z
     });
   }
 }
